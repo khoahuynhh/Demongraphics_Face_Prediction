@@ -128,34 +128,6 @@ python inference_edge_2.py --model outputs/yolov26n_cls/best_model.onnx --camera
 
 Script sẽ detect khuôn mặt, crop vùng mặt, chạy ONNX model và trả về tuổi, giới tính, cảm xúc kèm latency.
 
-## Đánh giá và benchmark
-
-Một số script hỗ trợ:
-
-- `test_emotion_accuracy.py`: kiểm tra accuracy cảm xúc.
-- `benchmark_edge_latency.py`: đo latency suy luận edge.
-- `plot.py`: vẽ biểu đồ từ output/log.
-- `plot_dataset_distribution.py`: thống kê phân phối dataset.
-- `sample_edge_test_images.py`: tạo tập ảnh test nhỏ cho edge inference.
-
-Nếu không muốn đưa benchmark script lên Git, thêm dòng này vào `.gitignore`:
-
-```gitignore
-benchmark_edge_latency.py
-```
-
-## File không nên commit
-
-Các file/thư mục sau không nên push trực tiếp lên GitHub:
-
-- `data/`: dataset ảnh và file list local.
-- `outputs/`: checkpoint, ONNX, log, biểu đồ sinh ra khi train.
-- `*.pth`, `*.pt`, `*.onnx`, `*.onnx.data`: model weights và model export.
-- `*.npz`, `*.npy`: file dữ liệu sinh ra.
-- `__pycache__/`, `.venv/`, `.vscode/`.
-
-Nếu cần chia sẻ model weights, nên dùng Git LFS, Google Drive, Hugging Face Hub hoặc GitHub Releases thay vì commit trực tiếp vào repository.
-
 ## Ghi chú
 
 - `requirements.txt` hiện đang pin PyTorch CUDA 12.1. Nếu cài trên CPU-only, cần đổi sang bản CPU.
