@@ -1,0 +1,73 @@
+# Python cache / build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+events.out.tfevents*
+
+# ML datasets and generated outputs
+data/**
+!data/
+!data/*.py
+outputs/
+runs/
+wandb/
+mlruns/
+
+# Model weights, checkpoints, and exported model binaries
+*.pt
+*.pth
+*.onnx
+*.onnx.data
+*.ckpt
+*.safetensors
+*.h5
+*.pb
+*.tflite
+*.engine
+
+# Generated arrays / databases
+*.npy
+*.npz
+
+# Keep common project metadata tracked when present
+!requirements.txt
+!README.md
+
+# File
+benchmark_edge_latency.py
+inference_edge.py
+plot_dataset_distribution.py
+plot.py
+read_pth.py
+sample_edge_test_images.py
+test_emotion_accuracy.py
+test_pth.py
